@@ -1,6 +1,7 @@
 // Value tobe adjust to your measured value
-#define SHAKE_TIME_FRAME 100
-#define SHAKE_TRIGGER_THRESHOLD 8
+#define SHAKE_TIME_FRAME 200
+#define SHAKE_TRIGGER_THRESHOLD 16
+#define FADEOUT_TIME_FACTOR 4
 
 /*******************************************************************************
  * AVI Player example
@@ -256,7 +257,7 @@ void loop()
 #else  // ESP_ARDUINO_VERSION_MAJOR >= 3
       ledcWrite(GFX_BL, 256 - i);
 #endif // ESP_ARDUINO_VERSION_MAJOR >= 3
-      delay(10);
+      delay(FADEOUT_TIME_FACTOR);
     }
   }
   else
